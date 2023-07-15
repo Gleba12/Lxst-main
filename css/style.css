@@ -1,0 +1,341 @@
+/*Сброс стилей Github*/
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+img,
+embed,
+iframe,
+object,
+audio,
+video {
+    height: auto;
+    max-width: 100%;
+}
+
+iframe {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+    text-align: left;
+}
+
+/*Конец сброса стилей Github*/
+
+/*Создание стиля текста*/
+@font-face {
+    font-family: 'text';
+    src: url(./GARABD.TTF);
+}
+
+/* Настройка всего контента на странице */
+body {
+    background-color: #1b1b1b;
+}
+
+.wrapper {
+    min-width: 570px;
+    max-width: 2560px;
+    margin: auto;
+}
+
+/*Шапка*/
+header.site-head {
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 50px 0px 50px;
+    border-style: solid;
+    border-color: #383838;
+    border-width: 0px 0px .1px 0px;
+}
+
+/*Навигационная панель*/
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    height: 65px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo>img {
+    width: 50px;
+}
+
+.nav-bar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a.history,
+a.album,
+a.shop,
+a.concerts {
+    color: #999999;
+    position: relative;
+    text-decoration: none;
+    margin: 0px 10px 0px 10px;
+    font-size: 18px;
+}
+
+a.history:after,
+a.album:after,
+a.shop:after,
+a.concerts:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    /* Высота линии */
+    background-color: cornflowerblue;
+    /* Цвет подчеркивания при исчезании линии*/
+    transition: width 0.7s;
+    /* Время эффекта */
+}
+
+a.history:hover:after,
+a.album:hover:after,
+a.shop:hover:after,
+a.concerts:hover:after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    /* Высота линии */
+    background-color: cornflowerblue;
+    /* Цвет подчеркивания при появлении линии*/
+    transition: width 0.7s;
+    /* Время эффекта */
+}
+
+/*Конец навигационной панели*/
+/*Конец шапки*/
+
+/*Тело*/
+.body {
+    margin: 50px;
+}
+
+/*Заголовки*/
+.header {
+    color: #cac9c9;
+    font-size: 30px;
+    font-family: 'text';
+    margin-bottom: 15px;
+}
+
+/*Подзаголовки*/
+.header1 {
+    color: #cac9c9;
+    font-size: 25px;
+    font-family: 'text';
+    margin-bottom: 20px;
+}
+
+/*Применение Grid-а для текста и картинки*/
+.text1 {
+    grid-area: txt1;
+}
+
+.text2 {
+    grid-area: txt2;
+}
+
+.grimg1 {
+    grid-area: gimg1;
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.grimg2 {
+    grid-area: gimg2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.info1 {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+        "txt1 txt1 txt1 gimg1 gimg1 gimg1"
+        "txt1 txt1 txt1 gimg1 gimg1 gimg1";
+    grid-gap: 30px;
+    margin-bottom: 20px;
+}
+
+.info2 {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+        "gimg2 gimg2 gimg2 txt2 txt2 txt2"
+        "gimg2 gimg2 gimg2 txt2 txt2 txt2";
+    grid-gap: 30px;
+    margin-bottom: 20px;
+}
+
+/*Начало подвала сайта*/
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    height: 65px;
+    padding: 10px 0px 10px 0px;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0px 50px 0px 50px;
+    border-style: solid;
+    border-color: #383838;
+    border-width: .1px 0px 0px 0px;
+}
+
+.foot-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+a.networks,
+a.supportaut {
+    color: #764abc;
+    text-decoration: none;
+    margin: 0px 0px 10px 0px;
+    font-size: 16px;
+    border: 1px solid #764abc;
+    border-radius: 25px;
+    transition: all 1s;
+    position: relative;
+}
+
+/*Конец подвала сайта*/
+
+/*Оформление текста*/
+p {
+    font-size: 20px;
+    color: #999999;
+    padding: auto;
+    font-family: 'text';
+    text-indent: 25px;
+    text-align: justify;
+    font-weight: 200;
+    padding-bottom: 10px;
+}
+
+/*Оформление изображений*/
+img {
+    border-radius: 15px;
+}
+
+/*Масштабирование сайта к разным экранам*/
+/* 950px */
+@media all and (max-width: 950px) {
+
+    div.info1,
+    div.info2 {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+}
+
+/* 665px */
+@media all and (max-width: 665px) {
+
+    div.info1,
+    div.info2 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        display: flex;
+        /*justify-content: space-between;*/
+        justify-content: center;
+    }
+
+    div.nav-bar {
+        display: none;
+    }
+}
